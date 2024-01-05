@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import FileUploader from './components/FileUploader'; // Assuming FileUploader is in the same directory
+import 'react-toastify/dist/ReactToastify.css';
+import DataDisplay from './components/DataDisplay';
 
-function App() {
+const App: React.FC = () => {
+  const [analyzedData, setAnalyzedData] = useState<any>(null); // Define a more specific type according to your data structure
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="content">
+        <h1>Explore Your Health Data Privately</h1>
+        <p>Analyze your Apple Health & Fitness data directly in your browser. Your privacy is our priority – your data never leaves your device.</p>
+        <FileUploader setAnalyzedData={setAnalyzedData} />
+        {analyzedData && <DataDisplay data={analyzedData} />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
