@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import FileUploader from './components/FileUploader'; // Assuming FileUploader is in the same directory
+import FileUploader, { AggregatedData } from './components/FileUploader'; // Assuming FileUploader is in the same directory
 import 'react-toastify/dist/ReactToastify.css';
 import DataDisplay from './components/DataDisplay';
 
 const App: React.FC = () => {
-  const [analyzedData, setAnalyzedData] = useState<any>(null); // Define a more specific type according to your data structure
+  const [analyzedData, setAnalyzedData] = useState<AggregatedData | null>(null); // Define a more specific type according to your data structure
 
   return (
     <div className="container">
