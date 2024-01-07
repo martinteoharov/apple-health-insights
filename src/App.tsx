@@ -60,7 +60,7 @@ const App: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Logo src="/logo4.png" width={300} height={300} alt="Health Data Analysis Logo" />
+        <Logo src="/logo4-compress.jpg" width={300} height={300} alt="Health Data Analysis Logo" />
         <Title>Explore Your <b>Apple Health</b> Data Privately</Title>
         <p>Analyze your Apple Health data directly in your browser - your data never leaves your device.</p>
         <FileUploader setAnalyzedData={setAnalyzedData} />
